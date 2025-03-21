@@ -8,10 +8,13 @@ library(ggplot2)
 # 3) Make the color vary by island
 # 4) Choose a color palette that you enjoy!
 plot_colors <- c("royalblue3", "lightgreen","firebrick1","gold")
-ggplot(penguins, aes(island, body_mass_g, color=islands)) +
+ggplot(penguins, aes(island, body_mass_g, color=island)) +
   geom_boxplot() +
   theme_bw() +
   labs(x="Island",
        y="Body mass (g)") +
   scale_color_manual(values=plot_colors)
-???
+
+
+colnames(penguins)
+unique(penguins$island)
